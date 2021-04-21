@@ -1,0 +1,25 @@
+header.user {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100vw;
+  background-color: #787d8c;
+  background-image: url("https://www.transparenttextures.com/patterns/shley-tree-1.png");
+
+  justify-content: flex-end;
+  align-items: center;
+}
+
+div.avatar-img {
+  display: flex;
+  justify-content: center;
+}
+
+.user img {
+  width: 80%;
+}
+
+.userName {
+  line-height: 3px;
+  color: #FFF; 
+}
