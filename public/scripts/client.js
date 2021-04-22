@@ -11,7 +11,7 @@ $(document).ready(function() {
 
   // Escape function to prevent any JXX within an entered tweet.
   const escape = function(str) {
-    let div = document.createElement("p");
+    let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
