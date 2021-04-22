@@ -47,3 +47,12 @@ textarea {
   border-bottom: 3px solid black;
   margin-bottom: 5px
 }
+
+#error-msg.show {
+  display: flex;
+  color: #ff0000;
+  font-size: medium;
+  margin: 0.5em 0em;
+  padding: 1vh 1vw;  
+  border: 2px solid;
+}

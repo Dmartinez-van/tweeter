@@ -5,5 +5,4 @@ $(document).ready(function() {
     $(this).siblings('div').children("output").html(charLeft);
     $(this).siblings('div').children("output").toggleClass("counterR", charLeft < 0);
   });
-  
 });

@@ -51,9 +51,9 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section>
+      <section class="compose-tweet">
         <h2>Compose Tweet</h2>
-        <form class="new-tweet" action="/tweets/" method="POST">
+        <form class="new-tweet" action="/tweets" method="POST">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <footer class="tweet-footer"></footer>
           <div class="btn-count">
@@ -61,7 +61,9 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+        <p id="error-msg"></p>
       </section>
+      
       <section id="tweets-container">
       </section>
     </main>
