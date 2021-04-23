@@ -8,8 +8,7 @@
 $("#error-msg").hide(0);
 
 $(document).ready(function() {
-
-  // Escape function to prevent any JXX within an entered tweet.
+  // Escape function to prevent any JXX within an entered tweet
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -50,6 +49,7 @@ $(document).ready(function() {
     for (const tweet of tweets) {
       $('#tweets-container').prepend(createTweetElement(tweet));
     }
+    timeago.render(document.querySelectorAll('.need_to_be_rendered'));
     return;
   };
   
@@ -59,7 +59,6 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(tweetsData) {
       renderTweets(tweetsData);
-      timeago.render(document.querySelectorAll('.need_to_be_rendered'));
     }).catch((err) => {
       console.log(`error: ${err}`);
     });
@@ -74,25 +73,18 @@ $(document).ready(function() {
     }).then(function(tweetsData) {
       const newest = tweetsData[tweetsData.length - 1];
       renderTweets([newest]);
-      // $("new-tweet").val('');
-      timeago.render(document.querySelectorAll('.need_to_be_rendered'));
     }).catch((err) => {
       console.log(`error: ${err}`);
     });
   };
 
-  $(".new-tweet").submit(function(e) {
-    e.preventDefault();
-    
-    // $("#error-msg").slideUp("fast");
-    // Textarea validation
-    const $text = $(this).children("textarea").val();
-    
+  const validateTweet = function(e) {
+    const $text = $(e).children("textarea").val();
+        
     $("#error-msg").hide(0);
     if (($text.length <= 0)) {
       $("#error-msg").attr('class', 'show').html('<i class="fas fa-exclamation-triangle"></i>' + "Cannot tweet nothing!" + '<i class="fas fa-exclamation-triangle"></i>');
       $("#error-msg").slideDown('slow');
-      // $("#error-msg").slideDown("slow").html("");
       return false;
     }
     $("#error-msg").hide(0);
@@ -109,6 +101,16 @@ $(document).ready(function() {
     }
     $("#error-msg").slideUp();
     $("#error-msg").html("");
+
+    return true;
+  };
+
+  $(".new-tweet").submit(function(e) {
+    e.preventDefault();
+    // Exit out before ajax call if tweet is invalid
+    if (!validateTweet($(this))) {
+      return false;
+    }
 
     // Post tweet to 'database'
     $.ajax({
