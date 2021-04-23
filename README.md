@@ -13,5 +13,12 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
-- Express
+This project requires the following dependencies. Please ensure they have been properly installed after running the `npm install` command.
+
+- Body-parser 1.15.2 
+- Chance 1.0.2
+- Express 4.13.4
+- md5: 2.1.0
 - Node 5.10.x or above
+
+
