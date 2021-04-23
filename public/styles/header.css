@@ -2,12 +2,48 @@ header.user {
   display: flex;
   flex-direction: column;
   height: 400px;
-  width: 100vw;
   background-color: #787d8c;
   background-image: url("https://www.transparenttextures.com/patterns/shley-tree-1.png");
 
   justify-content: flex-end;
   align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  /* Write Tablet only CSS here */
+  header.user {
+    width: 100vw;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* Write Tablet only CSS here */
+  
+  body {
+    flex-direction: row;
+    align-items: flex-star;
+    justify-content: flex-end;
+  }
+
+  body header {
+    position: fixed;
+    top: 35vh;
+    right: 60%;
+    width: 40%;
+    max-width: 600px;
+    justify-content: flex-start;
+  }
+
+  body header.user {
+    padding-top: 10px;
+    justify-content: center;
+  }
+
+  main {
+    margin-top: 120px;
+    padding: 0 20px;
+    width: 55%;
+  }
 }
 
 div.avatar-img {

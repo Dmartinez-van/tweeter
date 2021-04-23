@@ -20,13 +20,13 @@ $(document).ready(function() {
     const $tweetPost = $(
       `
       <article class="tweets-feed">
-      <header>
+      <div class="tweets-header">
       <p>
       <span><img src="${tweetObj.user.avatars}"></span>
       ${escape(tweetObj.user.name)}
       </p>
       <p class="handle">${escape(tweetObj.user.handle)}</p>
-      </header>
+      </div>
       
       <div class="tweet">
       ${escape(tweetObj.content.text)}
@@ -117,9 +117,8 @@ $(document).ready(function() {
       data: $(this).serialize()
     }).then(function() {
       $(".counter").val(140);
-      $("textarea").val('');
+      $("textarea").val('').focus();
       loadNewestTweet();
-
     }).catch(err => {
       console.log(err);
     });

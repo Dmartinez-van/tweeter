@@ -4,18 +4,18 @@
   background-color: #f4f1ec;
   font-family: "Source Sans Pro";
   border: 3px solid #545149;
-  margin: 6vh 0vh;
+  margin: 3vh 0vh;
 }
 
 .tweets-feed:hover {
   box-shadow: 4px 4px #7684b9db;
 }
 
-article.tweets-feed header {
+article.tweets-feed div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 2vw
+  margin: 0 2vw 1vh 
 }
 
 article p {
@@ -36,12 +36,10 @@ article img {
 }
 
 .tweet {
-  word-wrap: break-word;
-  margin: 0 1vw;
-  line-height: 6vh;
+  line-break: anywhere;
+  line-height: 4vh;
   font-weight: bold;
   border-bottom: 3px solid #545149;
-  margin-bottom: 5px
 }
 
 .date-and-icons {
