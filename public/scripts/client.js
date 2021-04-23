@@ -97,13 +97,13 @@ $(document).ready(function() {
     }
     $("#error-msg").hide(0);
     if ($text.length > 140) {
-      $("#error-msg").html('<i class="fas fa-exclamation-triangle"></i>' + "Know your limits... Type within them." + '<i class="fas fa-exclamation-triangle"></i>');
+      $("#error-msg").attr('class', 'show').html('<i class="fas fa-exclamation-triangle"></i>' + "Know your limits... Type within them." + '<i class="fas fa-exclamation-triangle"></i>');
       $("#error-msg").slideDown('slow');
       return false;
     }
     $("#error-msg").hide(0);
     if ($text === null) {
-      $("#error-msg").html('<i class="fas fa-exclamation-triangle"></i>' + "You've entered null? No, this won't do. Try again." + '<i class="fas fa-exclamation-triangle"></i>');
+      $("#error-msg").attr('class', 'show').html('<i class="fas fa-exclamation-triangle"></i>' + "You've entered null? No, this won't do. Try again." + '<i class="fas fa-exclamation-triangle"></i>');
       $("#error-msg").slideDown('slow');
       return false;
     }
