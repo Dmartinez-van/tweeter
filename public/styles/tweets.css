@@ -36,7 +36,7 @@ article img {
 }
 
 .tweet {
-  line-break: anywhere;
+  word-break: break-word;
   line-height: 4vh;
   font-weight: bold;
   border-bottom: 3px solid #545149;
