@@ -21,4 +21,7 @@ This project requires the following dependencies. Please ensure they have been p
 - md5: 2.1.0
 - Node 5.10.x or above
 
+## Screenshots
 
+!["Desktop (min-width=1024) Page View"](https://github.com/Dmartinez-van/tweeter/blob/master/public/Docs/Screen%20Shot%202021-04-22%20at%206.20.37%20PM.png)
+!["Layout-shifted View"](https://github.com/Dmartinez-van/tweeter/blob/master/public/Docs/Screen%20Shot%202021-04-22%20at%206.21.11%20PM.png)
