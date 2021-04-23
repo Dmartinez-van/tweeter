@@ -2,6 +2,7 @@ header.user {
   display: flex;
   flex-direction: column;
   height: 400px;
+  width: 100vw;
   background-color: #787d8c;
   background-image: url("https://www.transparenttextures.com/patterns/shley-tree-1.png");
 
@@ -9,16 +10,7 @@ header.user {
   align-items: center;
 }
 
-@media only screen and (max-width: 1024px) {
-  /* Write Tablet only CSS here */
-  header.user {
-    width: 100vw;
-  }
-}
-
 @media only screen and (min-width: 1024px) {
-  /* Write Tablet only CSS here */
-  
   body {
     flex-direction: row;
     align-items: flex-star;
@@ -30,7 +22,7 @@ header.user {
     top: 35vh;
     right: 60%;
     width: 40%;
-    max-width: 600px;
+    max-width: 430px;
     justify-content: flex-start;
   }
 

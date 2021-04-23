@@ -64,8 +64,6 @@ $(document).ready(function() {
     });
   };
   
-  loadTweets();
-
   const loadNewestTweet = function() {
     $.ajax({
       url: "/tweets",
@@ -80,19 +78,21 @@ $(document).ready(function() {
 
   const validateTweet = function(e) {
     const $text = $(e).children("textarea").val();
-        
+    // Check empty
     $("#error-msg").hide(0);
     if (($text.length <= 0)) {
       $("#error-msg").attr('class', 'show').html('<i class="fas fa-exclamation-triangle"></i>' + "Cannot tweet nothing!" + '<i class="fas fa-exclamation-triangle"></i>');
       $("#error-msg").slideDown('slow');
       return false;
     }
+    // Check too long
     $("#error-msg").hide(0);
     if ($text.length > 140) {
       $("#error-msg").attr('class', 'show').html('<i class="fas fa-exclamation-triangle"></i>' + "Know your limits... Type within them." + '<i class="fas fa-exclamation-triangle"></i>');
       $("#error-msg").slideDown('slow');
       return false;
     }
+    // Check null case (potentially remove?)
     $("#error-msg").hide(0);
     if ($text === null) {
       $("#error-msg").attr('class', 'show').html('<i class="fas fa-exclamation-triangle"></i>' + "You've entered null? No, this won't do. Try again." + '<i class="fas fa-exclamation-triangle"></i>');
@@ -101,7 +101,6 @@ $(document).ready(function() {
     }
     $("#error-msg").slideUp();
     $("#error-msg").html("");
-
     return true;
   };
 
@@ -125,5 +124,7 @@ $(document).ready(function() {
       console.log(err);
     });
   });
+
+  loadTweets();
 });
 
